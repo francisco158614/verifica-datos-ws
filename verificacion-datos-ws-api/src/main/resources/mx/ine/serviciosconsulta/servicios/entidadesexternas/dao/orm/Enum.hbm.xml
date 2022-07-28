@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>	
+	<typedef class="mx.ine.serviciosconsulta.servicios.entidadesexternas.dao.hibernate.comun.GenericEnumUserType" name="entidad">
+		<param name="enumClassName">mx.ine.serviciosconsulta.servicios.entidadesexternas.modelo.catalogo.Entidad</param>
+	</typedef>
+	<typedef class="mx.ine.serviciosconsulta.servicios.entidadesexternas.dao.hibernate.comun.GenericEnumUserType" name="tipoBajaPadron">
+		<param name="enumClassName">mx.ine.serviciosconsulta.servicios.entidadesexternas.modelo.catalogo.TipoBajaPadron</param>
+	</typedef>
+	<typedef class="mx.ine.serviciosconsulta.servicios.entidadesexternas.dao.hibernate.comun.GenericEnumUserType" name="tipoCausaRoboExtravio">
+		<param name="enumClassName">mx.ine.serviciosconsulta.servicios.entidadesexternas.modelo.catalogo.TipoCausaRoboExtravio</param>
+	</typedef>
+	<typedef class="mx.ine.serviciosconsulta.servicios.entidadesexternas.dao.hibernate.comun.GenericEnumUserType" name="tipoEstatusCiudadano">
+		<param name="enumClassName">mx.ine.serviciosconsulta.servicios.entidadesexternas.modelo.catalogo.TipoEstatusCiudadano</param>
+	</typedef>
+	<typedef class="mx.ine.serviciosconsulta.servicios.entidadesexternas.dao.hibernate.comun.GenericEnumUserType" name="tipoEstatusRoboExtravio">
+		<param name="enumClassName">mx.ine.serviciosconsulta.servicios.entidadesexternas.modelo.catalogo.TipoEstatusRoboExtravio</param>
+	</typedef>
+	<typedef class="mx.ine.serviciosconsulta.servicios.entidadesexternas.dao.hibernate.comun.GenericEnumUserType" name="tipoReincorporacionPadron">
+		<param name="enumClassName">mx.ine.serviciosconsulta.servicios.entidadesexternas.modelo.catalogo.TipoReincorporacionPadron</param>
+	</typedef>
+	<typedef class="mx.ine.serviciosconsulta.servicios.entidadesexternas.dao.hibernate.comun.GenericEnumUserType" name="tipoRespuestaSituacionRegistral">
+		<param name="enumClassName">mx.ine.serviciosconsulta.servicios.entidadesexternas.modelo.catalogo.TipoRespuestaSituacionRegistral</param>
+	</typedef>
+	<typedef class="mx.ine.serviciosconsulta.servicios.entidadesexternas.dao.hibernate.comun.GenericEnumUserType" name="tipoRespuestaSolicitada">
+		<param name="enumClassName">mx.ine.serviciosconsulta.servicios.entidadesexternas.modelo.catalogo.TipoRespuestaSolicitada</param>
+	</typedef>
+</hibernate-mapping>

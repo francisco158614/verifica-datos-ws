@@ -1,0 +1,37 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"	
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						   http://www.springframework.org/schema/beans/spring-beans.xsd
+						   http://www.springframework.org/schema/context
+						   http://www.springframework.org/schema/context/spring-context.xsd
+						   http://www.springframework.org/schema/security
+						   http://www.springframework.org/schema/security/spring-security.xsd
+						   http://www.springframework.org/schema/jee
+						   http://www.springframework.org/schema/jee/spring-jee.xsd">
+						   
+	<jee:jndi-lookup id="userJNDI" jndi-name="java:global/userDatos" />
+	<jee:jndi-lookup id="passJNDI" jndi-name="java:global/passDatos" />
+	<security:http use-expressions="true" auto-config="true">
+		<security:csrf  disabled="true" /> 
+		<security:intercept-url pattern="/**" access="isAuthenticated()"  />
+		<security:http-basic/>
+		<security:headers>
+			<security:frame-options policy="DENY"/>		
+			<security:cache-control/>				
+			<security:xss-protection block="true"/>
+			<security:content-type-options />			
+		</security:headers>		
+	</security:http>
+	<bean id="myUserDetailsService" class="mx.ine.servicios.svcee.verificacionDatos.sec.MyUserDetailsService"/>
+	
+	<bean id="passwordEncoder"  class="org.springframework.security.crypto.password.NoOpPasswordEncoder" factory-method="getInstance"/>
+   		
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="myUserDetailsService" >
+		<security:password-encoder ref="passwordEncoder"/>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+</beans>

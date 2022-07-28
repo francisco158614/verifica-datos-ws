@@ -1,0 +1,28 @@
+1)Se utiliza un servidor jboss-eap-7
+
+2)Para el logger:
+
+Conectarse al cliente CLI de JBoss:
+JBOSS_HOME/bin/jboss-cli.bat -c
+sh JBOSS_HOME/bin/jboss-cli.sh -c
+
+Crear el logging profile:
+/subsystem=logging/logging-profile=verificacionDatos-profile:add
+Agregar un handler de consola:
+/subsystem=logging/logging-profile=verificacionDatos-profile/console-handler=verificacionDatos-console:add(formatter="%K{level}%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n")
+Agregar un handler de archivo:
+
+/subsystem=logging/logging-profile=verificacionDatos-profile/periodic-rotating-file-handler=verificacionDatos-file:add(formatter="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n", file={path=>"verificacionDatos.log", "relative-to"=>"jboss.server.log.dir"}, suffix=".yyyy-MM-dd", append="true", autoflush="true")
+Otro handler de archivo
+/subsystem=logging/logging-profile=verificacionDatos-profile/periodic-rotating-file-handler=verificacionDatos-file-failure:add(formatter="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n",file={path=>"verificacionDatos-failure.log","relative-to"=>"jboss.server.log.dir"},suffix=".yyyy-MM-dd",append="true",autoflush="true",filter-spec=match("SCPLN-WS-ERR"))
+
+Agregar un logger:
+/subsystem=logging/logging-profile=verificacionDatos-profile/logger=mx.ine:add(level=DEBUG)
+Agregar un root logger:
+/subsystem=logging/logging-profile=verificacionDatos-profile/root-logger=ROOT:add(level=INFO)
+Asignar los manejadores al root logger:
+/subsystem=logging/logging-profile=verificacionDatos-profile/root-logger=ROOT:root-logger-assign-handler(name="verificacionDatos-console")
+/subsystem=logging/logging-profile=verificacionDatos-profile/root-logger=ROOT:root-logger-assign-handler(name="verificacionDatos-file")
+/subsystem=logging/logging-profile=verificacionDatos-profile/root-logger=ROOT:root-logger-assign-handler(name="verificacionDatos-file-failure")
+Salir:
+exit

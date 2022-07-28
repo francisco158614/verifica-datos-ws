@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.serviciosconsulta.servicios.entidadesexternas.modelo.entidad" schema="CONSULTAEXTERNA" >
+	<class name="HistoricoConsultaExterna" table="HISTORICOCONSULTAEXTERNA">
+    	<comment>Mapeo de la tabla HISTORICOCONSULTAEXTERNA </comment>
+    	<id name="historicoConsultaExternaId">
+	        <column name="HISTORICOCONSULTAEXTERNA_ID"/>
+            <generator class="sequence" >
+            	<param name="sequence">SEQ_HISTORICOCONSULTAEXTERNA</param>
+            </generator>	    
+	    </id>
+    	<property name="ciudadanoId">
+            <column name="CIUDADANO_ID" />
+        </property>
+    	<property name="credencialId">
+            <column name="CREDENCIAL_ID" />
+        </property>
+       	<property name="claveElector">
+            <column name="CLAVE_ELECTOR" />
+        </property>
+        <property name="numeroEmisionCredencial">
+            <column name="NUM_EMISION_CREDENCIAL" />
+        </property>
+        <property name="ocr">
+            <column name="OCR" />
+        </property>
+        <property name="cic">
+            <column name="CIC" />
+        </property>
+        <property name="curp">
+            <column name="CURP" />
+        </property>
+      	<property name="fechaInscripcionPadron">
+            <column name="FECHA_INSCRIPCION_PADRON"/>
+        </property>
+       	<property name="nombre">
+            <column name="NOMBRE" />
+        </property>
+        <property name="apellidoPaterno">
+            <column name="APELLIDO_PATERNO" />
+        </property>
+        <property name="apellidoMaterno">
+            <column name="APELLIDO_MATERNO" />
+        </property>
+       	<property name="tipoRespuestaSolicitada" type="tipoRespuestaSolicitada">
+            <column name="TIPO_RESPUESTA" />
+        </property>  
+         <property name="tipoRespuestaSituacionRegistral" type="tipoRespuestaSituacionRegistral">
+            <column name="TIPORESPSITUACIONREGISTRAL_ID" />
+        </property>  
+        <property name="fechaConsulta" type="java.sql.Timestamp">
+            <column name="FECHA_CONSULTA" sql-type="DATE" />
+        </property>
+        <property name="fechaRespuesta" type="java.sql.Timestamp">
+            <column name="FECHA_RESPUESTA" sql-type="DATE" />
+        </property>
+       	<property name="servicioSolicitado">
+            <column name="SERVICIO_SOLICITADO" />
+        </property>
+      	<property name="usuario">
+            <column name="USUARIO" />
+        </property>
+       
+     </class>
+</hibernate-mapping>

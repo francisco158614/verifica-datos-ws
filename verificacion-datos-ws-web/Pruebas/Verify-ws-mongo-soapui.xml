@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2c998de5-cd03-4512-af65-ba4540e938ae" activeEnvironment="Default" name="verifficacion-datos-ws_V3_mongo" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="351e5d35-d362-41ca-aa8b-158d43e66f1b" wadlVersion="http://wadl.dev.java.net/2009/02" name="VerifyDataProxy" type="rest" basePath="/verificacion-datos-ws" definitionUrl="file:/D:/WS_JBOSS_FUSE/ESB/VerifyDataProxy/src/main/resources/wadl/VerifyDataProxy.wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT"/><con:endpoints><con:endpoint>http://172.19.78.152:8080</con:endpoint><con:endpoint>http://172.24.60.116:8080</con:endpoint><con:endpoint>http://172.24.60.241:8080</con:endpoint><con:endpoint>http://localhost:9000</con:endpoint></con:endpoints><con:resource name="web" path="/SVCEE" id="c10bd5ed-64b2-401c-afd7-1fbd13fccde7"><con:settings/><con:parameters/><con:resource name="consultaDatos/" path="/consulta" id="2ef161e7-b96a-4c4c-9c74-cf438570a87f"><con:settings/><con:parameters/><con:method name="POST" id="5b5cc443-9dde-4952-b6b1-c0c1e124c97c" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="For241" id="2c515e5b-d4b0-481d-a6f6-816e774fd1da" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic ZGF0b3MzOjFrRmMz" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://172.24.60.241:8080</con:endpoint><con:request>{
+   "DatosEntrada":{
+      "tipoRespuestaSolicitada":"CONSULTA_EXTERNA",
+      "datosComparacion":{
+         "ocr":"0336095325949",
+         "claveElector":"RMTRCL82022309M400",
+         "numeroEmisionCredencial":1,
+         "cic":"199807820",
+         "curp":"RATC820223MDFMRL07",
+         "nombre":"FRANCISCO ANDRES",
+         "apellidoPaterno":"LOPEZ",
+         "apellidoMaterno":"DURAN",
+         "anioRegistro":2019,
+         "anioEmision":2018,
+         "numeroReporteRoboExtravio":2
+      },
+      "conAvisoPrivacidad":true,
+      "indice":"serialine0201911130000310c79b4-b5c6-4934-954a-5e987ad5ae10"
+   }
+}
+</con:request><con:originalUri>http://172.19.132.6/cxf/VerifyDataProxy/Proxy/consultaDatos/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="info" path="/info" id="2ef161e7-b96a-4c4c-9c74-cf438570a87f"><con:settings/><con:parameters/><con:method name="POST" id="5b5cc443-9dde-4952-b6b1-c0c1e124c97c" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" id="2c515e5b-d4b0-481d-a6f6-816e774fd1da" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://172.19.78.152:8080</con:endpoint><con:request/><con:originalUri>http://172.19.132.6/cxf/VerifyDataProxy/Proxy/consultaDatos/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

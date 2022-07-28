@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	
+	<!-- hibernate mapping resources -->
+	<util:list id="hibernateMappingResources">
+		<value>mx/ine/serviciosconsulta/servicios/entidadesexternas/dao/orm/Enum.hbm.xml</value>
+		<value>mx/ine/serviciosconsulta/servicios/entidadesexternas/dao/orm/DatosCiudadano.hbm.xml</value>
+		<value>mx/ine/serviciosconsulta/servicios/entidadesexternas/dao/orm/HistoricoConsultaExterna.hbm.xml</value>
+	</util:list>
+	
+	<!-- hibernate properties -->
+ 	<bean id="hibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	    <property name="properties">
+	        <props>
+	        	<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.max_fetch_depth">3</prop>
+				<prop key="hibernate.jdbc.fetch_size">100</prop>
+				<prop key="hibernate.jdbc.batch_size">10</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.default_schema">CONSULTAEXTERNA</prop>
+	        </props>
+	    </property>
+	</bean>
+	
+	<!-- hibernate session factory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSource" 
+		p:mappingResources-ref="hibernateMappingResources" 
+		p:hibernateProperties-ref="hibernateProperties"/>
+		
+		
+	<!-- datasources test-->
+ 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+        destroy-method="close">
+        <property name="driverClassName">
+            <value>oracle.jdbc.driver.OracleDriver</value>
+        </property>
+        <property name="url">
+            <value>jdbc:oracle:thin:@172.19.1.51:1521:USUA</value>
+        </property>
+        <property name="username">
+            <value>CONSULTAEXTERNA</value>
+        </property>
+        <property name="password">
+            <value>CONSULTAEXTERNA</value>
+        </property>
+     </bean>
+
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		
+	<jee:jndi-lookup id="uriMongo" jndi-name="java:global/uriMongo" default-value="mongodb://ddosSvcv:hBd%40Ek93DPzV@172.24.60.150,172.24.60.151,172.24.60.152:27017/?authSource=svcvPruebas"/>
+	<jee:jndi-lookup id="paramUriMongo" jndi-name="java:global/paramUriMongo" default-value="authMechanism=SCRAM-SHA-256,replicaSet=mongodbSvcv,readPreference=primary,ssl=false"/>
+	<jee:jndi-lookup id="databaseMongo" jndi-name="java:global/databaseMongo" default-value="svcvPruebas"/>
+	<jee:jndi-lookup id="collectionCredencial" jndi-name="java:global/collectionCredencial" default-value="credencial"/>
+	<jee:jndi-lookup id="collectionCiudadano" jndi-name="java:global/collectionCiudadano" default-value="ciudadano"/>
+</beans>
