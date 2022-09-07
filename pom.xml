@@ -141,6 +141,7 @@
 	    		<version>${jackson-xc-version}</version>
 			</dependency>
 			
+			
 				<!-- BASICAS -->
         	<dependency>
 				<groupId>commons-codec</groupId>
