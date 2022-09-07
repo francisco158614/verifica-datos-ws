@@ -40,6 +40,12 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- javax  -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		    <scope>provided</scope>
+		</dependency>
 		<!-- LOGGER -->
         <dependency>
             <groupId>org.slf4j</groupId>

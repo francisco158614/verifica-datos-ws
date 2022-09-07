@@ -204,6 +204,13 @@
     		<artifactId>jackson-xc</artifactId>
     		<scope>${general-scope}</scope>
 		</dependency> 		
+		
+		<!-- javax  -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		    <scope>provided</scope>
+		</dependency>
   	</dependencies>
   	<build>
   		<plugins>
